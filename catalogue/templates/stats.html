@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block linkjavascript %}
+{{ block.super }}
+        <script type="text/javascript" src="/js/statscript.js"></script>
+{% endblock %}
+
+{% block xclass %}statscolumn{% endblock %}
+
+{% block columntwo %}
+<div id="homepadding">
+	<div id="hoverto">hover over boxes for more details</div>
+	<table id="statstable">
+		<tr>
+			<td colspan=2><div class="statsboxes" id="mainbox">{{ animals|length }} ANIMALS ALTOGETHER
+<div class="statstext">
+{{ nsp }} SPECIES ALTOGETHER
+</div>
+			</div></td>
+		</tr>
+		<tr>
+			<td><div class="statsboxes" id="femalebox">{{ gf|length }} FEMALES
+<div class="statstext">
+{{ gfy|length }} OF THESE ARE YOUTH<br />
+{{ gfa|length }} OF THESE ARE ADULTS<br />
+</div>
+            </div></td>
+			<td><div class="statsboxes" id="malebox">{{ gm|length }} MALES
+<div class="statstext">
+{{ gmy|length }} OF THESE ARE YOUTH<br />
+{{ gma|length }} OF THESE ARE ADULTS<br />
+</div>
+            </div></td>
+		</tr>
+		<tr>
+			<td><div class="statsboxes" id="adultbox">{{ aa|length }} ADULTS</div></td>
+			<td><div class="statsboxes" id="youthbox">{{ ay|length }} YOUTH</div></td>
+		</tr>
+		<tr>
+			<td><div class="statsboxes" id="countrybox">
+                <div class="heightchecker">
+COUNTRY
+<div class="statstext">
+{% for continent, count in continent_count.items %}
+{% if count == 1 %}
+{{ count }} <span class="lightgray">ANIMAL IN</span> {{ continent|upper }}
+{% else %}
+{{ count }} <span class="lightgray">ANIMALS IN</span> {{ continent|upper }}
+{% endif %}<br />
+{% endfor %}
+</div>
+                </div>
+			</div></td>
+			<td><div class="statsboxes" id="commonbox">
+STATUS
+<div class="statstext">
+{% for status, count in status_count.items %}
+{% if count == 1 %} 
+{{ count }} <span class="lightgray">ANIMAL IS</span> {{ status|upper }}
+{% else %}
+{{ count }} <span class="lightgray">ANIMALS ARE</span> {{ status|upper }}
+{% endif %}<br />
+{% endfor %}
+</div>
+			</div></td>
+		</tr>
+	</table>
+</div>
+{% endblock columntwo %}

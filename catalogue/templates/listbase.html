@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block xclass %}listpage{% endblock xclass %}
+{% block columntwo %}
+<div id="homepadding">		
+
+<!-- List carousel --!>
+
+    <div id="sortby">
+        sort by
+        <span class="sortb" id="dictname">name</span>, 
+        <span class="sortb" id="dictspecies">species</span>,
+        <span class="sortb" id="dictcountry">country</span>,
+        <span class="sortb" id="dictage">age</span> and 
+        <span class="sortb" id="dictgender">gender</span>
+    </div>
+    <section class="listbox">
+	{% block listbox %}
+		<div id="listcontainer">
+		{% block listcontainer %}
+			<div class="namesort">
+				<div class="sortinner">
+				{% block namesort %}
+    <tr class="{% cycle "row1" "row2" %}">
+		<td>
+            <a class="{% if a.gender == "F" %}femhov{% else %}malhov{% endif %}" href="/catalogue/{{ a.slug }}">
+                {{ a.name }}
+            </a>
+        </td>
+		<td><span style="color:
+{% if a.gender == "F" %}
+#f598d0
+{% else %}
+#80c3f6
+{% endif %};">{{ a.gender }}</span></td>
+		<td>{{ a.age }}</td>
+    	<td>{{ a.species.subspecies_name }} {{ a.species.species_name }}</td>
+		<td>{{ a.posture|truncatewords:5 }}</td>
+ 		<td>{{ a.special_markings|truncatewords:7 }}</td>
+	</tr>
+				{% endblock namesort %}
+				</div>
+			</div>
+			<div class="speciesort">
+				<div class="sortinner">
+				{% block speciesort %}
+    <tr class="{% cycle "row1" "row2" %}">
+		<td>
+            <a class="{% if a.gender == "F" %}femhov{% else %}malhov{% endif %}" href="/catalogue/{{ a.slug }}">
+                {{ a.name }}
+            </a>
+        </td>
+		<td><span style="color:
+{% if a.gender == "F" %}
+#f598d0
+{% else %}
+#80c3f6
+{% endif %};">{{ a.gender }}</span></td>
+		<td>{{ a.age }}</td>
+    	<td>{{ a.species.subspecies_name }} {{ a.species.species_name }}</td>
+		<td>{{ a.posture|truncatewords:5 }}</td>
+ 		<td>{{ a.special_markings|truncatewords:7 }}</td>
+	</tr>
+				{% endblock speciesort %}
+				</div>
+			</div>
+			<div class="countrysort">
+				<div class="sortinner">
+				{% block countrysort %}
+  	<tr class="{% cycle "row1" "row2" %}">
+		<td><a class="
+{% if a.gender == "F" %}
+femhov
+{% else %}
+malhov
+{% endif %}" href="/catalogue/{{ a.slug }}">{{ a.name }}
+        </a></td>
+		<td><span style="color:
+{% if a.gender == "F" %}
+#f598d0
+{% else %}
+#80c3f6
+{% endif %};">{{ a.gender }}
+        </span></td>
+		<td>{{ a.age }}</td>
+		<td>{{ a.species.subspecies_name }} {{ a.species.species_name }}</td>
+		<td>{{ a.species.global_home }}</td>
+		<td>{{ a.posture }}</td>
+	</tr>
+				{% endblock countrysort %}
+				</div>
+			</div>
+			<div class="agesort">
+				<div class="sortinner">
+				{% block agesort %}
+    <tr class="{% cycle "row1" "row2" %}">
+		<td>
+            <a class="{% if a.gender == "F" %}femhov{% else %}malhov{% endif %}" href="/catalogue/{{ a.slug }}">
+                {{ a.name }}
+            </a>
+        </td>
+		<td><span style="color:
+{% if a.gender == "F" %}
+#f598d0
+{% else %}
+#80c3f6
+{% endif %};">{{ a.gender }}</span></td>
+		<td>{{ a.age }}</td>
+    	<td>{{ a.species.subspecies_name }} {{ a.species.species_name }}</td>
+		<td>{{ a.posture|truncatewords:5 }}</td>
+ 		<td>{{ a.special_markings|truncatewords:7 }}</td>
+	</tr>
+				{% endblock agesort %}
+				</div>
+			</div>
+			<div class="gendersort">
+				<div class="sortinner">
+				{% block gendersort %}
+    <tr class="{% cycle "row1" "row2" %}">
+		<td>
+            <a class="{% if a.gender == "F" %}femhov{% else %}malhov{% endif %}" href="/catalogue/{{ a.slug }}">
+                {{ a.name }}
+            </a>
+        </td>
+		<td><span style="color:
+{% if a.gender == "F" %}
+#f598d0
+{% else %}
+#80c3f6
+{% endif %};">{{ a.gender }}</span></td>
+		<td>{{ a.age }}</td>
+    	<td>{{ a.species.subspecies_name }} {{ a.species.species_name }}</td>
+		<td>{{ a.posture|truncatewords:5 }}</td>
+ 		<td>{{ a.special_markings|truncatewords:7 }}</td>
+	</tr>
+				{% endblock gendersort %}
+				</div>
+			</div>
+		{% endblock listcontainer %}
+		</div>
+	{% endblock listbox %}
+	</section>
+</div>
+{% endblock columntwo %}
+

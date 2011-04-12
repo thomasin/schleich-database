@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<title>{% block title %}schleich database ~~{% endblock %}</title>
+		{% block linkrelcss %}<link rel="stylesheet" type="text/css" href="/css/index-css.css" />{% endblock %}
+		{% block linkjavascript %}
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="/js/jquery.min.js">
+		</script>
+		<!-- the mousewheel plugin - optional to provide mousewheel support -->
+		<script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="/js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="/js/listcarousel.js"></script>
+		{% endblock %}
+		{% block javascript %}
+		<script>
+$(document).ready(function(){
+	$(function()
+	{
+		$('.namesort, .gendersort, .agesort, .countrysort, .speciesort').jScrollPane({enableKeyboardNavigation: false, gutter: 10});
+	});
+});
+		</script>
+		{% endblock %}
+	</head>
+
+	<body>
+		<div id="container">
+
+<!-- Navigation --!>
+
+			<nav class="columnone">
+			{% block columnone %}
+				<div class="individualnav">
+{% block homenav %}
+<a href="/index.html"><img src="/images/navigationlink.png" alt="Home"></a>
+<div class="text">HOME</div>
+{% endblock %}
+				</div>
+				<div class="individualnav">
+{% block listnav %}
+<a href="/lists.html"><img src="/images/navigationlink.png" alt="List"></a>
+<div class="text">LIST</div>
+{% endblock %}
+				</div>
+				<div class="individualnav">
+{% block statsnav %}
+<a href=""><img src="/images/navigationlink.png" alt="Statistics"></a>
+<div class="text">STATISTICS</div>
+{% endblock %}
+				</div>
+				<div class="individualnav">
+{% block historynav %}
+<a href=""><img src="/images/navigationlink.png" alt="History"></a>
+<div class="text">HISTORY</div>
+{% endblock %}
+				</div>
+			{% endblock columnone %}
+			</nav>
+			<section class="columntwo" id="listpage">
+				<div id="homepadding">
+					<div id="homecontentbox">
+<span class="homeheader">
+schleich database
+</span>
+						<div id="font">
+Here it is at last, click on the links to your left to see more of this wonderful website. You, of course, can personalise this background image how you wish, and if there are any questions you have, please don't hesitate to ask.
+						</div>
+					</div>
+					<div id="picturebox">
+					</div>
+
+{% block speciesort %}
+
+{% endblock %}
+				</div>
+			</section>
+	</body>
+
+</html>
+
+

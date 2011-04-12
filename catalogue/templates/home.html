@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block xclass %}listpage{% endblock xclass %}
+{% block columntwo %}
+<div id="homepadding">
+    <div id="homecontentbox">
+        <span class="homeheader">schleich database</span>
+        <div id="font">
+Here it is at last, click on the links to your left to see more of this wonderful website. You, of course, can personalise this background image how you wish, and if there are any questions you have, please don't hesitate to ask.
+        </div>
+    </div>
+    <div id="picturebox"></div>
+    <div id="hmlcont">
+        <table id="homelist">
+{% for a in animals|dictsort:"name" %}
+			<tr class="{% cycle "row1" "row2" %}">
+				<td>
+<a class="{% if a.gender == "F" %}femhov{% else %}malhov{% endif %}" href="/catalogue/{{ a.slug }}">{{ a.name }}</a>
+				</td>
+			    <td>
+<span style="color:{% if a.gender == "F" %}#f598d0{% else %}#80c3f6{% endif %};">{{ a.gender }}</span>
+				</td>
+				<td>{{ a.age }}</td>
+    			<td>{{ a.species.subspecies_name }} {{ a.species.species_name }}</td>
+				<td>{{ a.posture|truncatewords:5 }}</td>
+ 				<td>{{ a.special_markings|truncatewords:7 }}</td>
+			</tr>
+{% endfor %}
+        </table>
+    </div>   
+</div>
+{% endblock columntwo %}
+
+

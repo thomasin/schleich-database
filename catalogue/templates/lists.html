@@ -1,0 +1,43 @@
+{% extends "listbase.html" %}
+
+{% block title %}a list of animals{% endblock %}
+
+{% block namesort %}
+    <table>
+        {% for a in animals|dictsort:"name" %}
+        {{ block.super }}
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block gendersort %}
+	<table>
+		{% for a in animals|dictsort:"gender" %}
+        {{ block.super }}
+		{% endfor %}
+	</table>
+{% endblock %}
+
+{% block agesort %}
+	<table>
+		{% for a in animals|dictsort:"age" %}
+        {{ block.super }}
+		{% endfor %}
+	</table>
+{% endblock %}
+
+{% block countrysort %}
+	<table>
+        {% for a in animals|dictsort:"species.global_home" %}
+        {{ block.super }}
+        {% endfor %}
+	</table>
+{% endblock %}
+
+{% block speciesort %}
+	<table>
+		{% for a in animals|dictsort:"species.species_name" %}
+        {{ block.super }}
+		{% endfor %}
+	</table>
+{% endblock %}

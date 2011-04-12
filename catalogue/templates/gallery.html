@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block xclass %}xheight{% endblock %}
+{% block columntwo%}
+<div id="homepadding">
+    <a class="mainimglink" href=""><img id="imgpos" src="/images/frame.png"></a>
+</div>
+<div class="mainimg" style="background-image: url(/images/galleryimg.png);"></div>
+{% endblock columntwo %}
+
+{% block columnthree %}
+<div id="columnthree">
+    <table id="gallerythumbs">
+{% for row in table %}
+            <tr class="centeralign">
+{% for a in row %}
+                    <td align="center">
+                        <div class="galleryimage" alt="{{ a.slug }}" style="background-image: url({{ a.image }});"></div>
+                    </td>
+{% endfor %}
+            </tr>
+{% endfor %}
+    </table>
+</div>
+{% endblock columnthree %}

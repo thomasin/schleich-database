@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ animal.name }} ~ {{ block.super }}
+{% endblock title %}
+
+{% block columntwo %}
+    <header>
+
+<!-- Animal name and gender --!>
+
+        {{ animal.name }}
+
+{% if animal.gender == "F" %}
+	    <div id="girlsign" class="gendersigns">
+            <img src="/images/girl_sign.png" alt="{{ animal.name }} is a girl">
+		</div>
+{% else %}
+		<div id="boysign" class="gendersigns">
+            <img src="/images/boy_sign.png" alt="{{ animal.name }} is a boy">
+		</div>
+{% endif %}
+	</header>
+
+<!-- Animal image --!>
+			
+	<section id="animalimage">
+{% if animal.image %}
+        <img src="/{{ animal.image }}" alt="A picture of {{ animal.name }}" />
+{% else %}
+        <img src="/images/blank.png" alt="No picture was provided" />
+{% endif %}
+	</section>
+
+<!-- Carousel box --!>
+
+	<section class="carouselbox">
+		<div id="carouselcontainer">
+			<div class="facts1">
+<span class="bold">species</span><br>
+<span class="facts">{{ animal.species.subspecies_name }} {{ animal.species.species_name }}</span><p />
+<span class="bold">scientific name</span><br>
+<span class="facts">{{ animal.species.scientific_name }}</span><p />
+<span class="bold">status in the wild</span><br>
+<span class="facts">{{ animal.species.status }}</span><p />
+<span class="bold">primary habitat</span><br>
+<span class="facts">{{ animal.species.primary_habitat }}</span><p />
+<span class="bold">global home</span><br>
+<span class="facts">{{ animal.species.global_home }}</span><p />
+			</div>
+			<div class="facts2">
+<span class="bold">height</span><br>
+<span class="facts">{{ animal.height }}cm</span><p />
+<span class="bold">weight</span><br>
+<span class="facts">{{ animal.weight }}g</span><p />
+<span class="bold">posture</span><br>
+<span class="facts">{{ animal.posture }}</span><p />
+<span class="bold">special markings</span><br>
+<span class="facts">{{ animal.special_markings }}</span><p />
+			</div>
+
+			<div class="facts3">
+
+<!-- Relationship code --!>
+
+{% for r in first_rs %} 
+
+                <span class="facts">
+                    <a href="/catalogue/{{ animal.slug }}">{{ animal.name }}</a> is the 
+                </span> 
+                <span class="bold">
+                    {{ r.relationship|lower }}
+                </span> 
+                <span class="facts"> 
+                    of <a href="/catalogue/{{ r.second_animal.slug }}">{{ r.second_animal.name }}</a>
+                </span>
+                <p />
+
+{% endfor %}
+
+{% for r in second_rs %} 
+
+                <span class="facts">
+                    <a href="/catalogue/{{ r.first_animal.slug }}">{{ r.first_animal.name }}</a> is the 
+                </span> 
+                <span class="bold">
+                    {{ r.relationship|lower }}
+                </span> 
+                <span class="facts">
+                    of <a href="/catalogue/{{ animal.slug }}">{{ animal.name }}</a>
+                </span>
+                <p />
+
+{% endfor %}
+			</div>
+					
+			<div class="facts4">
+<span class="bold">year made</span><br>
+<span class="facts">{{ animal.year_made }}</span><p />
+<span class="bold">catalogue number</span><br>
+<span class="facts">{{ animal.catalogue_number }}</span><p />
+			</div>
+	    </div>
+
+<!-- Square selectors --!>
+
+		<div class="carousel">
+			<div id="nav1"></div>
+			<div id="nav2"></div>
+			<div id="nav3"></div>
+			<div id="nav4"></div>
+		</div>
+    </section>
+
+    <!-- Personality carousel --!>
+
+	<section class="personalitybox">
+		<div id="personalitycontainer">
+			<div class="facts11">
+				<div class="factinner">
+                    <span class="boldened">personality</span>
+                    <p />
+                    {{ animal.personality|linebreaks }}
+				</div>
+			</div>
+			<div class="facts22">
+				<div class="factinner">
+                    <span class="boldened">other information</span>
+                    <p />
+                    {{ animal.other_information|linebreaks }}
+				</div>
+			</div>
+		</div>
+
+<!-- Personality square selectors --!>
+
+		<div class="personality">
+			<div id="nav11"></div>
+			<div id="nav22"></div>
+		</div>
+	</section>
+
+{% endblock columntwo %}

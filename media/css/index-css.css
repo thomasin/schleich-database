@@ -1,0 +1,811 @@
+/* Main body */
+
+html {
+	cursor: auto;
+	-moz-transition: 3s ease;
+	overflow: hidden;
+}
+
+body {
+	background-color: #f6f6f6;
+	color: #666; 
+	font-family: Univers;
+	font-size: 0.7em;
+	-moz-transition: 3s ease;
+}
+
+#container {
+	position: absolute;
+	width: 800px;
+	left: 100px;
+}
+
+/* Admin link */
+
+#adminlink a {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #cbcbcb;
+    font-size: 0.95em;
+    text-decoration: none;
+    text-shadow: 1px 1px #fff;
+}
+
+#adminlink a:hover {
+    text-decoration: underline;
+}
+
+/* Link formatting */
+
+a {
+	color: #777;
+}
+
+.carouselbox a {
+	color: #eee;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.carouselbox a:hover {
+	text-decoration: underline;
+}
+
+/* Gallery page */
+
+#columnthree {
+    position: absolute;
+    width: 250px;
+    right: -280px;
+    padding: 10px;
+    height: 523px;
+    max-height: 523px;
+    min-height: 523px;
+    -moz-border-radius: 5px;
+    overflow: auto;
+	-moz-box-shadow: 0 0 10px #bbb;
+	background: -moz-linear-gradient(#fff 60%, #eee 100%);
+    -moz-transition: 1s ease;
+    opacity: 0.8;
+}
+
+#columnthree:hover {
+    opacity: 1;
+}
+
+#gallerythumbs {
+    margin-left: 5px;
+    margin-top: 0px;
+}
+
+.jspPane #gallerythumbs {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+#xheight {
+    height: 513px;
+}
+
+#xheight #homepadding {
+    height: 493px;
+}
+
+#imgpos {
+    position: absolute;
+    z-index: 5;
+}
+
+.mainimg {
+    position: relative;
+    top: -425px;
+    left: 90px;
+    z-index: 3;
+    width: 450px;
+    height: 330px;
+    background-size: cover;
+    background-color: #f6f6f6;
+    -moz-transition: 1s ease;
+}
+
+.jspPane .galleryimage {
+	width: 65px;
+}
+
+.galleryimage {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    opacity: 0.8;
+    width: 70px;
+	height: 74px;
+	background-size: cover;
+	margin: 0;
+    margin-top: 2px;
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 0 0 10px #eee;
+	-moz-transition: 1s ease;
+}
+
+.galleryimage:hover {
+	opacity: 1;
+    cursor: pointer;
+}
+
+/* Statistics page */
+
+#femalebox {
+	background: -moz-linear-gradient(#f598d0 50%, #f576c3 100%);
+    text-shadow: none;
+	z-index: 200;
+}
+
+#malebox {
+	background: -moz-linear-gradient(#80c3f6 50%, #5bb3f6 100%);
+    text-shadow: none;
+    margin-left: 5px;
+	z-index: 200;
+}
+
+#youthbox, #commonbox {
+    margin-left: 5px;
+}
+
+#statscolumn {
+    height: 305px;
+}
+
+#statscolumn #homepadding {
+    height: 285px;
+}
+
+#mainbox {
+	z-index: 250;
+	width: 580px;
+}
+
+.statsboxes {
+	position: absolute;
+    text-shadow: 1px 1px #fff;
+	padding: 10px;
+	margin-top: -10px;
+	width: 270px;
+    background: -moz-linear-gradient(#fff 50%, #efefef 100%);
+	overflow: hidden;
+	height: 30px;
+	-moz-border-radius: 5px;
+	color: #666;
+	-moz-box-shadow: 0 0 10px #ccc;
+	font-size: 2em;
+	text-align: center;
+	-moz-transition: 1s ease;
+}
+
+#adultbox:hover, #youthbox:hover {
+    height: 30px;
+}
+
+#mainbox:hover {
+    height: 70px;
+}
+
+#femalebox:hover, #malebox:hover {
+    height: 90px;
+}
+
+.statsboxes:hover {
+    height: 150px;
+}
+
+#hoverto {
+	width: 600px;
+	padding: 5px 5px 10px 10px;
+	margin-left: -10px;
+	text-align: right;
+	color: #aaa;
+	margin-bottom: -10px;
+}
+
+.statstext {
+	font-size: 0.7em;
+	margin-top: 10px;
+}
+
+.lightgray {
+	color: #aaa;
+}
+
+#statstable td {
+	height: 60px;
+}
+
+/* Home page */
+
+.homeheader {
+	font-size: 3em;
+	color: #ddd;	
+}
+
+#homepadding {
+	background: -moz-linear-gradient(#f6f6f6 60%, #fff 100%);
+	-moz-border-radius: 5px;
+	padding: 10px;
+	height: 96.3%;
+}
+
+#homecontentbox {
+	background: -moz-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+	width: 280px;
+	height: 280px;
+	padding: 10px;
+	-moz-border-radius: 5px;
+}
+
+#picturebox {
+	background-image: url(../images/homepageimage.jpg);
+	-moz-box-shadow: 0px 0px 5px #bbb;
+	-moz-background-size: cover;
+	background-size: cover;
+	-moz-border-radius: 5px;
+	width: 280px;
+	padding: 10px;
+	position: relative;
+	top: -300px;
+	left: 310px;
+	height: 180px;
+	opacity: 0.7;
+}
+
+#font {
+	font-size: 1.2em;
+	color: #ccc;
+}
+
+/* List page */
+
+#sortby {
+	width: 600px;
+	padding: 5px 10px 10px 10px;
+	text-align: right;
+	color: #aaa;
+}
+
+.sortb {
+	color: #666;
+}
+
+.sortb:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#hmlcont {
+	max-height: 300px;
+	overflow: auto;
+	position:absolute;
+	top: 235px;
+	left: 16px;
+	width: 610px;
+}	
+
+#homelist {
+	width: 593px;
+	margin-left: 5px;
+}
+
+#listpage {
+	height: 550px;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+        padding: 3px;
+}
+
+.row1 {
+	background: -moz-linear-gradient(#fff 10%, #f6f6f6 60%);
+}
+
+.row2 {
+	background: -moz-linear-gradient(#eee 10%, #efefef 60%);
+}
+
+.femhov:hover {
+	color: #f598d0;
+}
+
+.malhov:hover {
+	color: #80c3f6;
+}
+
+/* Navigation */
+
+nav.columnone {
+	width: 150px;
+	position: absolute;
+	left: 0;
+	min-height: 590px;
+	-webkit-animation-delay: 0, 0;
+}
+
+.individualnav img {
+	position: relative;
+	z-index: 100;
+}
+
+.individualnav {
+	-moz-box-shadow: 0 0 5px #bbb;
+	padding: 5px;
+	-moz-border-radius: 5px;
+	margin-bottom: 10px;
+    background: #fff;
+	-moz-transition: 1s ease;
+	height: 15px;	
+}
+
+.individualnav:hover {
+	color: #80c3f6;
+	-moz-box-shadow: 0px 0px 10px #80c3f6;
+}
+
+.text {
+	z-index: 101;
+	margin-top: -23px;
+}
+
+/* Individual character sheet */
+
+section.columntwo {
+	width: 630px;
+	position: absolute;
+	right: 0;
+	height: 465px;
+	background-color: #fff;
+	padding: 5px;
+	-moz-border-radius: 5px;
+	-moz-box-shadow: 0 0 10px #bbb;
+	background: -moz-linear-gradient(#fff 60%, #eee 100%);
+}
+
+/* Header */
+
+header {
+	font-size: 3em;
+	width: 350px;
+	margin-left: 5px;
+	color: #666;
+	-webkit-animation-delay: 0, 1s;
+}
+
+/* Character image */
+
+section#animalimage img {
+	width: 340px;
+}
+
+section#animalimage {
+	width: 340px;
+	margin-left: 5px;
+	-moz-border-radius: 5px;
+	-moz-box-shadow: 0 0 5px #bbb;
+	height: 188px;
+	overflow: hidden;
+	-webkit-animation-delay: 0, 1.5s;
+}
+
+/* Gender */
+
+.gendersigns {
+	height: 35px;
+	width: 20px;
+	position: absolute;
+	padding: 0 5px 5px 5px;
+	top: 0px;
+	left: 320px;
+	display: inline;
+	-moz-border-radius: 5px;
+}
+
+#boysign {
+	background: -moz-linear-gradient(bottom, #c5daf6 30%, #fff 100%);
+}
+
+#girlsign {
+	background: -moz-linear-gradient(bottom, #f6c5ed 30%, #fff 100%);
+	padding-left: 7px;
+	width: 18px;
+}
+
+/* Carousel box */
+
+section.carouselbox {
+	width: 245px;
+	position: absolute;
+	-moz-box-shadow: 0 0 10px #bfbfbf;
+	margin-right: 15px;
+	top: 15px;
+	right: -3px;	
+	height: 200px;
+	margin-bottom: -210px;
+	max-height:550px;
+	padding: 10px;
+	background-color: #b3d9f6;
+	color: #f6f6f6;
+	-moz-border-radius: 5px;
+	overflow: hidden;
+	font-size: 1.2em;
+	line-height: 80%;
+	background: -moz-linear-gradient(#b3d9f6, #80c3f6);
+	-webkit-animation-delay: 0, 2s;
+}
+
+.facts1, .facts2, .facts3, .facts4 {
+	width: 215px;
+	padding: 10px 40px 10px 10px;
+	float: left;
+	height: 200px;
+	overflow: auto;
+}
+
+.carousel {
+	width: 20px;
+	font-size: 1.2em;
+	position: absolute;
+	right: 5px;
+	color: #fff;
+	z-index: 5;
+	top: 5px;
+}
+
+#carouselcontainer {
+	width: 1060px;
+	-moz-transform: translate(0,0);
+	-moz-transition: 2s ease;
+}
+
+#nav1, #nav4, #nav2, #nav3 {
+	width: 20px;
+	height: 20px;
+	-moz-border-radius: 5px;
+	background-color: #cbe4f6;
+	margin-bottom: 5px;
+	-moz-transition: 1s ease;
+}
+
+#nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover {
+	background-color:#f6f6f6;
+	-moz-box-shadow: 2px 2px 3px rgba(135, 139, 144, 0.4);
+}
+
+
+.bold {
+	font-weight: bold;
+	font-size: 1.2em;
+	text-shadow: 1px 1px 2px #000;
+	color: #f6f6f6;
+}
+
+.facts {
+	text-shadow: 1px 1px 2px #000;
+	color: #f6f6f6;
+}
+
+/* List boxes */
+
+section.listbox {
+	width: 600px;
+	position: absolute;
+	margin-left: 5px;
+	left: 5px;
+	height: 485px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #b3d9f6;
+	color: #666;
+	-moz-border-radius: 5px;
+	overflow: hidden;
+	font-size: 0.91em;
+	line-height: 95%;
+	background: -moz-linear-gradient(#fff, #eee);
+	-webkit-animation-delay: 0, 3s;
+}
+
+.namesort, .gendersort, .agesort, .countrysort, .speciesort {
+	width: 580px;
+	height: 480px;
+	padding: 0 20px 0 0;
+	float: left;
+	overflow: auto;
+}
+
+
+.sortinner {
+	margin-left: 10px;
+}
+
+.gendersort, .agesort, .countrysort, .speciesort {
+	margin-left: 10px;
+}
+
+#listcontainer {
+	width: 3040px;
+	-moz-transform: translate(0,0);
+	-moz-transition: 2s ease;
+}
+
+.boldened {
+	font-size: 1.2em;
+	color: #8bc8f6;
+}
+
+
+/* Personality and Other Information box */
+
+section.personalitybox {
+	width: 600px;
+	position: absolute;
+	margin-left: 5px;
+	top: 245px;
+	left: 5px;
+	height: 200px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #b3d9f6;
+	color: #666;
+	-moz-border-radius: 5px;
+	overflow: hidden;
+	font-size: 1.2em;
+	line-height: 95%;
+	background: -moz-linear-gradient(#fff, #eee);
+	-webkit-animation-delay: 0, 3s;
+}
+
+.facts11, .facts22 {
+	width: 580px;
+	height: 180px;
+	padding: 0 20px 0 0;
+	float: left;
+	overflow: auto;
+}
+
+
+.factinner {
+	margin-left: 10px;
+}
+
+.facts22 {
+	margin-left: 10px;
+}
+
+.personality {
+	width: 20px;
+	font-size: 1.2em;
+	position: absolute;
+	right: 5px;
+	color: #fff;
+	z-index: 5;
+	top: 5px;
+}
+
+#personalitycontainer {
+	width: 1210px;
+	-moz-transform: translate(0,0);
+	-moz-transition: 2s ease;
+}
+
+#nav11, #nav22 {
+	width: 20px;
+	height: 20px;
+	-moz-border-radius: 5px;
+	background-color: #b3d9f6;
+	margin-bottom: 5px;
+	-moz-transition: 1s ease;
+}
+
+#nav11:hover, #nav22:hover, #nav33:hover, #nav44:hover {
+	background-color:#80c3f6;
+	-moz-box-shadow: 2px 2px 3px rgba(135, 139, 144, 0.4);
+}	
+
+.boldened {
+	font-size: 1.2em;
+	color: #8bc8f6;
+}
+
+
+/* jScrollPane code */
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 8px;
+	height: 100%;
+    background: transparent;
+	-moz-border-radius: 5px;	
+}
+
+#columnthree .jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 16px;
+	height: 100%;
+    background: transparent;
+	-moz-border-radius: 5px;	
+}
+
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 8px;
+	background: transparent;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+#columnthree .jspCap 
+{
+    display: block;
+    height: 5px;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background:#cbe4f6;
+	position: relative;
+	-moz-border-radius: 5px;
+}
+
+.jspDrag
+{
+	background:  -moz-linear-gradient(#b3d9f6, #80c3f6);
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+}
+
+section.carouselbox .jspTrack
+{
+	background:#cbe4f6;
+	position: relative;
+	-moz-border-radius: 5px;
+}
+
+section.carouselbox .jspDrag
+{
+	background:  -moz-linear-gradient(#fff, #eee);
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+}
+
+#hmlcont .jspTrack 
+{
+	background:#efefef;
+	position: relative;
+	-moz-border-radius: 5px;
+}
+
+#columnthree .jspTrack
+{
+	background:#efefef;
+	position: relative;
+    left: 5px;
+	-moz-border-radius: 5px;
+}
+
+#hmlcont .jspDrag 
+{
+	background:  -moz-linear-gradient(#dedede, #ddd);
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+}
+
+
+ #columnthree .jspDrag
+{
+	background:  -moz-linear-gradient(#dedede, #ddd);
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+}
+
+
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+

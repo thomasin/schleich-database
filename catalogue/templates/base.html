@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>{% block title %}schleich database ~~{% endblock title %}</title>
+		{% block linkrelcss %}<link rel="stylesheet" type="text/css" href="/css/index-css.css" />{% endblock linkrelcss%}
+		{% block linkjavascript %}
+		<!-- latest jQuery direct from google's CDN -->
+		<script type="text/javascript" src="/js/jquery.min.js">
+		</script>
+		<!-- the mousewheel plugin - optional to provide mousewheel support -->
+		<script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="/js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
+        {% endblock linkjavascript %}
+	</head>
+    <body>
+		<div id="container">
+
+<!-- Navigation --!>
+
+			<nav class="columnone">
+			{% block columnone %}
+				<div class="individualnav">
+                    <a href="/index.html"><img src="/images/navigationlink.png" alt="Home"></a>
+                    <div class="text">HOME</div>
+				</div>
+				<div class="individualnav">
+                    <a href="/lists.html"><img src="/images/navigationlink.png" alt="List"></a>
+                    <div class="text">LIST</div>
+				</div>
+				<div class="individualnav">
+                    <a href="/stats.html"><img src="/images/navigationlink.png" alt="Statistics"></a>
+                    <div class="text">STATISTICS</div>
+				</div>
+				<div class="individualnav">
+                    <a href="/gallery.html"><img src="/images/navigationlink.png" alt="History"></a>
+                    <div class="text">GALLERY</div>
+				</div>
+			{% endblock columnone %}
+			</nav>
+
+			<section class="columntwo" id="{% block xclass %}{% endblock xclass %}">
+            {% block listsect %} {% endblock listsect %}
+			{% block columntwo %}
+			{% endblock columntwo%}
+			</section>
+            {% block columnthree %}
+            {% endblock columnthree%}
+		</div>
+        <div id="adminlink">
+            <a href="/admin">ADMIN</a>
+        </div>
+	</body>
+</html>
+
+
