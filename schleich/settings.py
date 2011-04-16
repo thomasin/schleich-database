@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/thomasin/Documents/database/schleich/schleich.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/Users/thomasin/Documents/Development/schleich-database/schleich/schleich.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -45,7 +45,7 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/Users/thomasin/Documents/database/schleich/media/'
+MEDIA_ROOT = '/Users/thomasin/Documents/Development/schleich-database/schleich/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -78,7 +78,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'schleich.urls'
 
 TEMPLATE_DIRS = (
-    '/Users/thomasin/Documents/database/schleich/catalogue/templates'    
+    '/Users/thomasin/Documents/Development/schleich-database/schleich/catalogue/templates'    
 )
 
 INSTALLED_APPS = (
@@ -90,3 +90,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'schleich.catalogue'
 )
+
+from site_settings import *

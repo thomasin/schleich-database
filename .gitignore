@@ -2,4 +2,5 @@
 *.swp
 oldcss.css
 *.swo
+schleich/site_settings.py
 
