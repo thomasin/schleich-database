@@ -5,3 +5,7 @@ oldcss.css
 schleich/site_settings.py
 schleich/schleich.db
 schleich/media/images/animals/*
+*~
+Thumbs.db
+gui/build/*
+gui/dist/*
