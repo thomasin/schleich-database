@@ -88,7 +88,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'schleich.catalogue'
+    'schleich.catalogue',
+    'django_evolution'
 )
 
 from site_settings import *

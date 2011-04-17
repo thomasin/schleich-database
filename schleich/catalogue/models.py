@@ -86,7 +86,7 @@ class Animal(models.Model):
     other_information = models.TextField(max_length=5000, help_text="Please write as much as possible")
     catalogue_number = models.IntegerField()
     gender = models.CharField(max_length=2, choices=GENDER_CHOICES)
-    year_made = models.IntegerField()
+    year_made = models.IntegerField(null=True, blank=True)
 
     def __unicode__(self):
         return self.name
