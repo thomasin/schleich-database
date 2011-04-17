@@ -467,6 +467,10 @@ section.carouselbox {
 	overflow: auto;
 }
 
+.facts2 {
+    padding-bottom: 0;
+}
+
 .carousel {
 	width: 20px;
 	font-size: 1.2em;
