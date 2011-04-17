@@ -83,7 +83,7 @@ class Animal(models.Model):
     posture = models.CharField(max_length=500, help_text="Left/right is worked out by looking at the animal from <i><b>behind</b></i>")
     special_markings = models.CharField(max_length=100, help_text="Only if it distinguishes it from other animals from the same product line", blank=True)
     personality = models.TextField(max_length=5000, help_text="Please write as much as possible")
-    other_information = models.TextField(max_length=5000, help_text="Please write as much as possible")
+    other_information = models.TextField(max_length=5000, help_text="Please write as much as possible", blank=True)
     catalogue_number = models.IntegerField()
     gender = models.CharField(max_length=2, choices=GENDER_CHOICES)
     year_made = models.IntegerField(null=True, blank=True)
