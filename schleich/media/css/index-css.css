@@ -182,8 +182,24 @@ a {
 	-moz-transition: 1s ease;
 }
 
-#adultbox:hover, #youthbox:hover {
+#adultbox:hover, #youthbox:hover, #infantbox:hover, #elderlybox:hover {
     height: 30px;
+}
+
+#youthbox {
+    margin-left: -3px;
+}
+
+#infantbox {
+    margin-left: 2px;
+}
+
+#elderlybox {
+    margin-left: 6px;
+}
+
+#adultbox, #youthbox, #infantbox, #elderlybox {
+    width: 120px;
 }
 
 #mainbox:hover {
@@ -224,7 +240,7 @@ a {
 
 .homeheader {
 	font-size: 3em;
-	color: #ddd;	
+	color: #ccc;	
 }
 
 #homepadding {
@@ -259,7 +275,7 @@ a {
 
 #font {
 	font-size: 1.2em;
-	color: #ccc;
+	color: #bbb;
 }
 
 /* List page */
@@ -449,6 +465,10 @@ section.carouselbox {
 	float: left;
 	height: 200px;
 	overflow: auto;
+}
+
+.facts2 {
+    padding-bottom: 0;
 }
 
 .carousel {

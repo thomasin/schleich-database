@@ -49,6 +49,8 @@
 <span class="facts">{{ animal.species.global_home }}</span><p />
 			</div>
 			<div class="facts2">
+<span class="bold">age</span><br />
+<span class="facts">{{ animal.age }}</span><p />
 <span class="bold">height</span><br>
 <span class="facts">{{ animal.height }}cm</span><p />
 <span class="bold">weight</span><br>
@@ -96,7 +98,13 @@
 					
 			<div class="facts4">
 <span class="bold">year made</span><br>
-<span class="facts">{{ animal.year_made }}</span><p />
+<span class="facts">
+{% if animal.year_made %}
+{{ animal.year_made }}
+{% else %}
+No year provided
+{% endif %}
+</span><p />
 <span class="bold">catalogue number</span><br>
 <span class="facts">{{ animal.catalogue_number }}</span><p />
 			</div>
@@ -127,7 +135,11 @@
 				<div class="factinner">
                     <span class="boldened">other information</span>
                     <p />
+                    {% if animal.other_information %}
                     {{ animal.other_information|linebreaks }}
+                    {% else %}
+                    No other information
+                    {% endif %}
 				</div>
 			</div>
 		</div>
