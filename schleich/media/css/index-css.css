@@ -200,6 +200,7 @@ a {
 
 #adultbox, #youthbox, #infantbox, #elderlybox {
     width: 120px;
+    font-size: 1.9em;
 }
 
 #mainbox:hover {
