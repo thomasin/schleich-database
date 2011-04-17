@@ -4,3 +4,4 @@ oldcss.css
 *.swo
 schleich/site_settings.py
 schleich/schleich.db
+schleich/media/images/animals/*
