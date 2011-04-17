@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from schleich.catalogue.models import Species, Animal, Relationship, Other
+from django.db.models import Avg, Max, Min
 
 def name(request, name):
     try:
@@ -54,8 +55,9 @@ def statistics(request):
     gfa = Animal.objects.filter(age = "Adult", gender = "F")
     gmy = Animal.objects.filter(age = "Youth", gender = "M")
     gma = Animal.objects.filter(age = "Adult", gender = "M")
-    return render_to_response('stats.html', {'gfa': gfa, 'gma': gma, 'gmy': gmy, 'gfy': gfy, 'nsp': nsp, 'gf': gf, 'gm': gm, 'ai': ai, 'ae': ae, 'aa': aa, 'ay': ay, 'animals': animals, 'continent_count': continent_count, 'status_count': status_count})
-
+    wstat = Animal.objects.aggregate(average_weight=Avg('weight'), min_weight=Min('weight'), max_weight=Max('weight'))    
+    hstat = Animal.objects.aggregate(average_height=Avg('height'), min_height=Min('height'), max_height=Max('height'))
+    return render_to_response('stats.html', {'wmax': wstat["max_weight"], 'wmin': wstat["min_weight"], 'wavg': wstat["average_weight"],'hmax': hstat["max_height"], 'havg': hstat["average_height"], 'hmin': hstat["min_height"], 'gfa': gfa, 'gma': gma, 'gmy': gmy, 'gfy': gfy, 'nsp': nsp, 'gf': gf, 'gm': gm, 'ai': ai, 'ae': ae, 'aa': aa, 'ay': ay, 'animals': animals, 'continent_count': continent_count, 'status_count': status_count}) 
 
 
 

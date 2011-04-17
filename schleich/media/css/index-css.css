@@ -148,16 +148,16 @@ a {
 	z-index: 200;
 }
 
-#youthbox, #commonbox {
+#youthbox, #commonbox, #weightbox {
     margin-left: 5px;
 }
 
 #statscolumn {
-    height: 305px;
+    height: 365px;
 }
 
 #statscolumn #homepadding {
-    height: 285px;
+    height: 345px;
 }
 
 #mainbox {
@@ -203,8 +203,20 @@ a {
     font-size: 1.9em;
 }
 
+#weightbox:hover, #heightbox:hover {
+    height: 100px;
+}
+
+#weightbox, #heightbox {
+    z-index: 34;
+}
+
 #mainbox:hover {
     height: 70px;
+}
+
+#countrybox, #commonbox {
+    z-index: 50;
 }
 
 #femalebox:hover, #malebox:hover {
