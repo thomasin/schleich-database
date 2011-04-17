@@ -182,8 +182,24 @@ a {
 	-moz-transition: 1s ease;
 }
 
-#adultbox:hover, #youthbox:hover {
+#adultbox:hover, #youthbox:hover, #infantbox:hover, #elderlybox:hover {
     height: 30px;
+}
+
+#youthbox {
+    margin-left: -3px;
+}
+
+#infantbox {
+    margin-left: 2px;
+}
+
+#elderlybox {
+    margin-left: 6px;
+}
+
+#adultbox, #youthbox, #infantbox, #elderlybox {
+    width: 120px;
 }
 
 #mainbox:hover {

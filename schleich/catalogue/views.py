@@ -48,11 +48,13 @@ def statistics(request):
     gm = Animal.objects.filter(gender = "M")
     aa = Animal.objects.filter(age = "Adult")
     ay = Animal.objects.filter(age = "Youth")
+    ai = Animal.objects.filter(age = "Infant")
+    ae = Animal.objects.filter(age = "Elderly")
     gfy = Animal.objects.filter(age = "Youth", gender = "F")
     gfa = Animal.objects.filter(age = "Adult", gender = "F")
     gmy = Animal.objects.filter(age = "Youth", gender = "M")
     gma = Animal.objects.filter(age = "Adult", gender = "M")
-    return render_to_response('stats.html', {'gfa': gfa, 'gma': gma, 'gmy': gmy, 'gfy': gfy, 'nsp': nsp, 'gf': gf, 'gm': gm, 'aa': aa, 'ay': ay, 'animals': animals, 'continent_count': continent_count, 'status_count': status_count})
+    return render_to_response('stats.html', {'gfa': gfa, 'gma': gma, 'gmy': gmy, 'gfy': gfy, 'nsp': nsp, 'gf': gf, 'gm': gm, 'ai': ai, 'ae': ae, 'aa': aa, 'ay': ay, 'animals': animals, 'continent_count': continent_count, 'status_count': status_count})
 
 
 

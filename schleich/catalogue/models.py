@@ -52,7 +52,9 @@ CAT_CHOICES = (
 
 AGE_CHOICES = (
     (u'Adult', u'Adult'),
-    (u'Youth', u'Youth')
+    (u'Youth', u'Youth'),
+    (u'Elderly', u'Elderly'),
+    (u'Infant', u'Infant')
 )
 
 class Species(models.Model):
