@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ story.title }}
+{% endblock title %}
+
+{% block columntwo %}
+<header>
+{{ story.title }}<br />
+</header>
+{{ story.story }}
+{% endblock %}

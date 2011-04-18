@@ -1,4 +1,4 @@
-from schleich.catalogue.models import Animal, Species, Other, Relationship
+from schleich.catalogue.models import Animal, Species, Other, Relationship, Story
 from django.contrib import admin
 
 from django.contrib.admin.widgets import AdminFileWidget
@@ -52,6 +52,7 @@ class RelationshipAdmin(admin.ModelAdmin):
         return super(RelationshipAdmin,self).formfield_for_dbfield(db_field, **kwargs)
  
 class AnimalAdmin(admin.ModelAdmin):
+    save_on_top = True
     list_display = ('name', 'species', 'age', 'gender', 'catalogue_number', 'year_made')
     list_filter = ['species', 'age', 'gender', 'year_made']
     search_fields = ['personality', 'name', 'posture', 'special_markings', 'other_information']   
@@ -64,6 +65,12 @@ class AnimalAdmin(admin.ModelAdmin):
             return db_field.formfield(**kwargs)
         return super(AnimalAdmin,self).formfield_for_dbfield(db_field, **kwargs)
     
+class StoryAdmin(admin.ModelAdmin):
+    save_on_top = True
+    list_display = ('title',)
+    fields = ['title', 'slug', 'story']
+    prepopulated_fields = {"slug": ("title", )}    
+
 
 class OtherAdmin(admin.ModelAdmin):
     fields = ['category', 'model_type', 'catalogue_number', 'year_made', 'name', 'gender', 'weight', 'height', 'global_home', 'status', 'scientific_name']
@@ -74,4 +81,4 @@ admin.site.register(Species, SpeciesAdmin)
 admin.site.register(Animal, AnimalAdmin)
 admin.site.register(Other, OtherAdmin)
 admin.site.register(Relationship, RelationshipAdmin)
-
+admin.site.register(Story, StoryAdmin)

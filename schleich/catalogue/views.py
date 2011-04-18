@@ -1,7 +1,15 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
-from schleich.catalogue.models import Species, Animal, Relationship, Other
+from schleich.catalogue.models import Species, Animal, Relationship, Other, Story
 from django.db.models import Avg, Max, Min
+
+def story(request, story):
+    animals = Animal.objects.all()    
+    try:
+        story = Story.objects.get(slug = story)
+    except Story.DoesNotExist:
+        raise Http404
+    return render_to_response('story.html', {'story': story, 'animals': animals})
 
 def name(request, name):
     try:

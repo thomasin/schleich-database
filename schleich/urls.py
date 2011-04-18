@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^catalogue/(?P<name>.*)$', 'schleich.catalogue.views.name'),
+    (r'^stories/(?P<story>.*)$', 'schleich.catalogue.views.story'),    
     (r'^index.html$', 'schleich.catalogue.views.home'),
     (r'^stats.html$', 'schleich.catalogue.views.statistics'),
     (r'^gallery.html$', 'schleich.catalogue.views.gallery'),

@@ -103,6 +103,11 @@ class Relationship(models.Model):
     def __unicode__(self):
         return '%s is the %s of %s' % (self.first_animal, self.relationship, self.second_animal)
 
+class Story(models.Model):
+    title = models.CharField(max_length=30, unique=True)
+    slug = models.SlugField(max_length=30, unique=True, null=True, blank=True)
+    story = models.TextField(help_text="Write as much as you want")
+
 class Other(models.Model):
     name = models.CharField(max_length=30, help_text="Only if applicable", blank=True)
     image = models.ImageField(upload_to="images/animals/", null=True, blank=True)
