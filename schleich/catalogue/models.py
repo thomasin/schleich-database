@@ -52,9 +52,7 @@ CAT_CHOICES = (
 
 AGE_CHOICES = (
     (u'Adult', u'Adult'),
-    (u'Youth', u'Youth'),
-    (u'Elderly', u'Elderly'),
-    (u'Infant', u'Infant')
+    (u'Youth', u'Youth')
 )
 
 class Species(models.Model):
@@ -70,8 +68,7 @@ class Species(models.Model):
 def image_file(instance, filename):
     base = "images/animals/%s"%defaultfilters.slugify(instance.name)
     ext = os.path.splitext(filename)[1]
-    if ext:
-        base = base + ext
+    base = base + ext
     return base
 
 class Animal(models.Model):
@@ -85,7 +82,7 @@ class Animal(models.Model):
     posture = models.CharField(max_length=500, help_text="Left/right is worked out by looking at the animal from <i><b>behind</b></i>")
     special_markings = models.CharField(max_length=100, help_text="Only if it distinguishes it from other animals from the same product line", blank=True)
     personality = models.TextField(max_length=5000, help_text="Please write as much as possible")
-    other_information = models.TextField(max_length=5000, help_text="Please write as much as possible", blank=True)
+    other_information = models.TextField(max_length=5000, help_text="Please write as much as possible")
     catalogue_number = models.IntegerField()
     gender = models.CharField(max_length=2, choices=GENDER_CHOICES)
     year_made = models.IntegerField(null=True, blank=True)
@@ -106,7 +103,7 @@ class Relationship(models.Model):
 class Story(models.Model):
     title = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=30, unique=True, null=True, blank=True)
-    story = models.TextField(help_text="Write as much as you want")
+    story = models.TextField(help_text='Put a # before character names, and if using html tags you <i>must</i> remember to close them.')
 
 class Other(models.Model):
     name = models.CharField(max_length=30, help_text="Only if applicable", blank=True)

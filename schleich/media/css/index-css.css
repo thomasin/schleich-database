@@ -133,6 +133,22 @@ a {
     cursor: pointer;
 }
 
+/* Stories and Story page */
+
+#storytitle {
+    font-size: 2em;
+    text-align: center;
+}
+
+#storycontainer {
+    padding: 10px;
+	background: -moz-linear-gradient(#f6f6f6 60%, #fff 100%);
+    overflow: auto;
+    width: 610px;
+    height: 436px;
+    -moz-border-radius: 5px;
+}
+
 /* Statistics page */
 
 #femalebox {

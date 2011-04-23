@@ -3,8 +3,8 @@ $(document).ready(function(){
     $(".galleryimage").click(function(){
         var image = $(this).attr("style");
         var link = $(this).attr("alt");
-         $(".mainimg").attr("style", image);
-         $(".mainimglink").attr("href", "/catalogue/" + link);
+        $(".mainimg").attr("style", image);
+        $(".mainimglink").attr("href", "/catalogue/" + link);
     });
     $("#dictname").click(function(){
 		$("#listcontainer").css("-moz-transform", "translate(0, 0)");
@@ -41,7 +41,7 @@ $(document).ready(function(){
    	});
 	$(function()
 	{
-		$('.namesort, .gendersort, .agesort, .countrysort, .speciesort, .facts11, .facts22, .facts1, .facts2, .facts3, .facts4, #columnthree, #hmlcont').jScrollPane({enableKeyboardNavigation: false, gutter: 10});
+		$('.namesort, .gendersort, .agesort, .countrysort, .speciesort, .facts11, .facts22, .facts1, .facts2, .facts3, .facts4, #columnthree, #hmlcont, #storycontainer').jScrollPane({enableKeyboardNavigation: false, gutter: 10});
 	});
 });
 

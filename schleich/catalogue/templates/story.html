@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+{% load catalogue_hashtags %}
 
 {% block title %}
 {{ story.title }}
 {% endblock title %}
 
 {% block columntwo %}
-<header>
+<div id="storytitle">
 {{ story.title }}<br />
-</header>
-{{ story.story }}
+</div>
+<div id="storycontainer">
+{{ story.story|hashtags|safe|linebreaks }}
+</div>
 {% endblock %}

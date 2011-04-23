@@ -89,7 +89,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'schleich.catalogue',
-    'django_evolution'
+    'django_evolution',
+    'schleich.catalogue.templatetags'
 )
 
 from site_settings import *
