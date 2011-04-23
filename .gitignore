@@ -9,3 +9,4 @@ schleich/media/images/animals/*
 Thumbs.db
 gui/build/*
 gui/dist/*
+*.swn
