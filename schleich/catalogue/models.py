@@ -102,6 +102,7 @@ class Relationship(models.Model):
 
 class Story(models.Model):
     title = models.CharField(max_length=30, unique=True)
+    desc = models.CharField(max_length=50, blank=True, help_text="A short description to help you identify the story, must be less than fifty letters long.")
     slug = models.SlugField(max_length=30, unique=True, null=True, blank=True)
     story = models.TextField(help_text='Put a # before character names, and if using html tags you <i>must</i> remember to close them.')
 

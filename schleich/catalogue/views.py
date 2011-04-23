@@ -24,6 +24,10 @@ def home(request):
     animals = Animal.objects.all()
     return render_to_response('home.html', {'animals': animals})
 
+def stories(request):
+    stories = Story.objects.all()
+    return render_to_response('stories.html', {'stories': stories})
+
 def lists(request):
     animals = Animal.objects.all()
     return render_to_response('lists.html', {'animals': animals})

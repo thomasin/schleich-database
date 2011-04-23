@@ -488,7 +488,7 @@ section.carouselbox {
 	-webkit-animation-delay: 0, 2s;
 }
 
-.facts1, .facts2, .facts3, .facts4 {
+.facts1, .facts2, .facts3, .facts4, .facts5 {
 	width: 215px;
 	padding: 10px 40px 10px 10px;
 	float: left;
@@ -511,12 +511,12 @@ section.carouselbox {
 }
 
 #carouselcontainer {
-	width: 1060px;
+	width: 1325px;
 	-moz-transform: translate(0,0);
 	-moz-transition: 2s ease;
 }
 
-#nav1, #nav4, #nav2, #nav3 {
+#nav1, #nav4, #nav2, #nav3, #nav5 {
 	width: 20px;
 	height: 20px;
 	-moz-border-radius: 5px;
@@ -525,7 +525,7 @@ section.carouselbox {
 	-moz-transition: 1s ease;
 }
 
-#nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover {
+#nav1:hover, #nav2:hover, #nav3:hover, #nav4:hover, #nav5:hover {
 	background-color:#f6f6f6;
 	-moz-box-shadow: 2px 2px 3px rgba(135, 139, 144, 0.4);
 }

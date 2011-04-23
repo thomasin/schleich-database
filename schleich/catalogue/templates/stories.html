@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load catalogue_hashtags %}
+
+{% block xclass %}listpage{% endblock xclass %}
+
+{% block columntwo %}
+<table>
+{% for story in stories %}
+    <tr>
+        <td>
+{{ story.title }}
+        </td>
+        <td>
+{{ story.desc|hashtags|safe }}
+        </td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock columntwo %}

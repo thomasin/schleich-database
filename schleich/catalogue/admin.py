@@ -67,8 +67,8 @@ class AnimalAdmin(admin.ModelAdmin):
     
 class StoryAdmin(admin.ModelAdmin):
     save_on_top = True
-    list_display = ('title',)
-    fields = ['title', 'slug', 'story']
+    list_display = ('title', 'desc')
+    fields = ['title', 'desc', 'slug', 'story']
     prepopulated_fields = {"slug": ("title", )}    
 
 

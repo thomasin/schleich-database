@@ -33,6 +33,9 @@ $(document).ready(function(){
    	$("#nav4").click(function(){
       		$("#carouselcontainer").css("-moz-transform", "translate(-795px, 0)");
    	});
+   	$("#nav5").click(function(){
+      		$("#carouselcontainer").css("-moz-transform", "translate(-1060px, 0)");
+   	});    
    	$("#nav11").click(function(){
       		$("#personalitycontainer").css("-moz-transform", "translate(0, 0)");
    	});
