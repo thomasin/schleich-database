@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'schleich.catalogue',
     'django_evolution',
+    'tagging',
     'schleich.catalogue.templatetags'
 )
 

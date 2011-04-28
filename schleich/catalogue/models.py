@@ -1,7 +1,9 @@
+import re
 import os
 from django.db import models
 from schleich.settings import MEDIA_ROOT
 from django.template import defaultfilters
+from tagging.models import Tag
 
 STATUS_CHOICES = (
     (u'Extinct', u'Extinct'),
@@ -71,6 +73,9 @@ def image_file(instance, filename):
     base = base + ext
     return base
 
+def get_hashes(text):
+    return re.findall('#[\w-]+', text)
+
 class Animal(models.Model):
     species = models.ForeignKey(Species, related_name = 'Animal')
     image = models.ImageField(upload_to=image_file, null=True, blank=True)
@@ -105,6 +110,20 @@ class Story(models.Model):
     desc = models.CharField(max_length=50, blank=True, help_text="A short description to help you identify the story, must be less than fifty letters long.")
     slug = models.SlugField(max_length=30, unique=True, null=True, blank=True)
     story = models.TextField(help_text='Put a # before character names, and if using html tags you <i>must</i> remember to close them.')
+    
+    def save(self, *args, **kwargs):
+        super(Story, self).save(*args, **kwargs)
+        hashes = get_hashes(self.story)
+        tags = [tag.name for tag in Tag.objects.get_for_object(self) if tag.name not in hashes]
+        tags.append(hashes)
+        Tag.objects.update_tags(self, ','.join(hashes))
+        animals = Animal.objects.all()
+        names = dict([(a.name, a) for a in animals])
+        names.update(dict([(a.slug, a) for a in animals]))
+        for h in hashes:
+            name = h.split('#')[1]
+            if name in names.keys():
+                Tag.objects.update_tags(names[name], 'story:%s'%self.slug)
 
 class Other(models.Model):
     name = models.CharField(max_length=30, help_text="Only if applicable", blank=True)
@@ -121,4 +140,6 @@ class Other(models.Model):
     category = models.CharField(max_length=30, choices=CAT_CHOICES)
     def __unicode__(self):
         return self.model_type
+
+
 

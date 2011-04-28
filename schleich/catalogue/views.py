@@ -2,6 +2,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from schleich.catalogue.models import Species, Animal, Relationship, Other, Story
 from django.db.models import Avg, Max, Min
+from tagging.models import Tag
 
 def story(request, story):
     animals = Animal.objects.all()    
@@ -18,7 +19,8 @@ def name(request, name):
         raise Http404
     first_rs = list(Relationship.objects.filter(first_animal = animal))
     second_rs = list(Relationship.objects.filter(second_animal = animal))
-    return render_to_response('name.html', {'animal': animal, 'first_rs': first_rs, 'second_rs': second_rs})
+    tags = [tag.name for tag in Tag.objects.get_for_object(animal)]
+    return render_to_response('name.html', {'animal': animal, 'first_rs': first_rs, 'second_rs': second_rs, 'tags':tags})
 
 def home(request):
     animals = Animal.objects.all()
