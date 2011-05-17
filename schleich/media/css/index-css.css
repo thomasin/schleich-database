@@ -26,8 +26,9 @@ body {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    color: #cbcbcb;
+    color: #aaa;
     font-size: 0.95em;
+    z-index: 1000;
     text-decoration: none;
     text-shadow: 1px 1px #fff;
 }
@@ -846,7 +847,7 @@ section.carouselbox .jspDrag
 #storycontainer .jspTrack {
     right: 5px;
 }
-
+q
 #hmlcont .jspDrag 
 {
 	background:  -moz-linear-gradient(#dedede, #ddd);
