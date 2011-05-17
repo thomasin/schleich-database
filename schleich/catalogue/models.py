@@ -95,6 +95,8 @@ class Animal(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return "/catalogue/%s"%(self.slug,)   
 
 class Relationship(models.Model):
     image = models.ImageField(upload_to="images/animals/relationships/", null=True, blank=True)
@@ -123,7 +125,10 @@ class Story(models.Model):
         for h in hashes:
             name = h.split('#')[1]
             if name in names.keys():
-                Tag.objects.update_tags(names[name], 'story:%s'%self.slug)
+                Tag.objects.add_tag(names[name], 'story:%s'%self.slug)
+
+    def get_absolute_url(self):
+        return "/stories/%s"%(self.slug,)   
 
 class Other(models.Model):
     name = models.CharField(max_length=30, help_text="Only if applicable", blank=True)

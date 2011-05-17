@@ -8,7 +8,7 @@
 {% for story in stories %}
     <tr>
         <td>
-{{ story.title }}
+<a href="/stories/{{ story.slug }}">{{ story.title }}</a>
         </td>
         <td>
 {{ story.desc|hashtags|safe }}

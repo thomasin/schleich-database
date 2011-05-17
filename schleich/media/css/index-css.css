@@ -149,6 +149,49 @@ a {
     -moz-border-radius: 5px;
 }
 
+.selected {
+    -moz-transition: 1s ease;
+    background-color: #80c3f6;
+    color: #fff;
+    text-decoration: none;
+}
+
+#storycontent {
+    margin-top: -10px;
+    z-index: 1;
+    position: relative;
+}
+
+#imagecontainer {
+    width: 150px;
+    right: -195px;
+    min-height: 455px;
+    position: absolute;
+    z-index: 2;
+    margin-right: 10px;
+    padding: 10px;
+    -moz-border-radius: 5px;
+	-moz-box-shadow: 0 0 10px #bbb;
+	background: -moz-linear-gradient(#fff 60%, #eee 100%);
+    -moz-transition: 1s ease;
+}
+
+.tagged_animal_image {
+    width: 150px;
+    moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition: ease 1s;
+    -moz-box-shadow: 0 0 10px #bbb;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.7;
+}
+
+.tagged_animal_image:hover {
+    opacity: 1;
+}
+
+
 /* Statistics page */
 
 #femalebox {
@@ -531,14 +574,14 @@ section.carouselbox {
 }
 
 
-.bold {
+.bold, .tag_story {
 	font-weight: bold;
 	font-size: 1.2em;
 	text-shadow: 1px 1px 2px #000;
 	color: #f6f6f6;
 }
 
-.facts {
+.facts, .tag_animal {
 	text-shadow: 1px 1px 2px #000;
 	color: #f6f6f6;
 }
@@ -701,6 +744,11 @@ section.personalitybox {
 	-moz-border-radius: 5px;	
 }
 
+#storycontainer .jspVerticalBar {
+    right: 0;
+    left: auto;
+}
+
 
 .jspHorizontalBar
 {
@@ -724,6 +772,12 @@ section.personalitybox {
 	display: none;
 }
 
+#storycontainer .jspCap 
+{
+    display: block;
+    height: 5px;
+}
+
 #columnthree .jspCap 
 {
     display: block;
@@ -733,6 +787,11 @@ section.personalitybox {
 .jspHorizontalBar .jspCap
 {
 	float: left;
+}
+
+#storycontainer .jspDrag {
+    right: 0;
+    left: auto;
 }
 
 .jspTrack
@@ -782,6 +841,10 @@ section.carouselbox .jspDrag
 	position: relative;
     left: 5px;
 	-moz-border-radius: 5px;
+}
+
+#storycontainer .jspTrack {
+    right: 5px;
 }
 
 #hmlcont .jspDrag 

@@ -10,6 +10,16 @@
 {{ story.title }}<br />
 </div>
 <div id="storycontainer">
-{{ story.story|hashtags|safe|linebreaks }}
+    <div id="storycontent">{{ story.story|hashtags|safe|linebreaks }}</div>
 </div>
+{% endblock %}
+
+{% block columnthree %}
+    <div id="imagecontainer">
+    {% for tagged_animal in tagged_animals %}
+        <a href="../catalogue/{{ tagged_animal.slug }}" id="{{ tagged_animal.slug}}" class="tagged_animal_link"><img src="../{{ tagged_animal.image }}" class="tagged_animal_image" id="{{ tagged_animal.slug }}image" /></a>
+    {% endfor %}  
+
+    </div>
+
 {% endblock %}

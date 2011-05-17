@@ -10,7 +10,25 @@ def story(request, story):
         story = Story.objects.get(slug = story)
     except Story.DoesNotExist:
         raise Http404
-    return render_to_response('story.html', {'story': story, 'animals': animals})
+    hashes = [t.name[1:] for t in Tag.objects.get_for_object(story) if t.name.startswith('#')]
+    names = dict([(a.name, a) for a in animals])
+    names.update(dict([(a.slug, a) for a in animals]))
+    tagged_animals = []
+    for h in hashes:
+        if h in names.keys():
+            tagged_animals.append(names[h])
+    return render_to_response('story.html', {'story': story, 'animals': animals, 'tagged_animals': tagged_animals})
+
+def tag_to_html(tag):
+    lookup = {'story':Story, 'other':Other, 'animal':Animal, 'species':Species, 'relationship':Relationship}
+    namefield = {'story':'title', 'animal':'name'}
+    tags =  tag.name.split(':')
+    try:
+        obj = lookup[tags[0]].objects.get(slug = tags[1])
+        return "<a class='tag_%s' href='%s'>%s</a><br />"%(obj.__class__.__name__.lower(), obj.get_absolute_url(), obj.__getattribute__(namefield[tags[0]]))
+    except:
+        raise
+        return tag.name
 
 def name(request, name):
     try:
@@ -19,7 +37,7 @@ def name(request, name):
         raise Http404
     first_rs = list(Relationship.objects.filter(first_animal = animal))
     second_rs = list(Relationship.objects.filter(second_animal = animal))
-    tags = [tag.name for tag in Tag.objects.get_for_object(animal)]
+    tags = [tag_to_html(tag) for tag in Tag.objects.get_for_object(animal)]
     return render_to_response('name.html', {'animal': animal, 'first_rs': first_rs, 'second_rs': second_rs, 'tags':tags})
 
 def home(request):
